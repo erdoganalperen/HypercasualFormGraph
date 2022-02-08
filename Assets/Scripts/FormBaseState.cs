@@ -15,4 +15,5 @@ public abstract class FormBaseState
     }
     public abstract void OnStart(FormStateManager manager);
     public abstract void OnUpdate(FormStateManager manager);
+    public abstract void OnTrigger(FormStateManager manager);
 }

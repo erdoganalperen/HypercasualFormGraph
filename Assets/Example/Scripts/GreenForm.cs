@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class GreenForm : FormBaseState
 {
-    public GreenForm(Forms formType) : base(formType)
-    {
-    }
+    public GreenForm(Forms formType) : base(formType) { }
+
     public override void OnStart(FormStateManager manager)
     {
         Debug.Log($"form {FormType} has started");
+        manager.CloseAllFormsExceptSpecified(FormType);
     }
 
     public override void OnUpdate(FormStateManager manager)
     {
+
     }
 
+    public override void OnTrigger(FormStateManager manager)
+    {
+        throw new System.NotImplementedException();
+    }
 }
