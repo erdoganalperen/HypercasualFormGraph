@@ -1,0 +1,3 @@
+.unity-enum-field{
+    flex-direction: column;
+}
