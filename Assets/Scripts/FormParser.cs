@@ -23,13 +23,13 @@ public class FormParser : MonoBehaviour
     }
 
     [Button("Proceed")]
-    private void ProceedToNextForm()
+    public Forms ProceedToNextForm()
     {
         print(_currentNodeGuid);
         var targetNode = GetTargetNodeByCurrentGuid(_currentNodeGuid);
         if (targetNode == null)
         {
-            print("There is no target node");return;
+            print("There is no target node");return default;
         }
         if (targetNode.IsBranch)
         {
@@ -45,6 +45,8 @@ public class FormParser : MonoBehaviour
             _currentNodeGuid = GetNodeByGuid(targetNode.Guid).Guid;
             print($"Changing to {GetNodeByGuid(_currentNodeGuid).FormName}");
         }
+        
+        return (Forms) Enum.Parse(typeof(Forms),GetNodeByGuid(_currentNodeGuid).FormName);
     }
 
     FormNodeData GetNodeByGuid(string guid)

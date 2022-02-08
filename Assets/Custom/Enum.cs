@@ -4,3 +4,10 @@ public enum FormPlans
     form2,
     form3
 }
+
+public enum Forms
+{
+    red,
+    green,
+    blue
+}
