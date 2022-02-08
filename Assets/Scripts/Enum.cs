@@ -9,5 +9,6 @@ public enum Forms
 {
     red,
     green,
-    blue
+    blue,
+    purple
 }

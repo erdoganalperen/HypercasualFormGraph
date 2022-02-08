@@ -20,7 +20,8 @@ public class FormStateManager : MonoBehaviour
         {
             new RedForm(Forms.red),
             new GreenForm(Forms.green),
-            new BlueForm(Forms.blue)
+            new BlueForm(Forms.blue),
+            new PurpleForm(Forms.purple)
         };
     }
 
@@ -59,7 +60,6 @@ public class FormStateManager : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            print(child.gameObject.name + " " + form.ToString());
             if (child.gameObject.name == form.ToString())
             {
                 child.gameObject.SetActive(true);

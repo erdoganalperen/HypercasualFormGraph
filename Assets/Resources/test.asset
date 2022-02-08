@@ -18,20 +18,27 @@ MonoBehaviour:
     TargetNodeGuid: c0e1c4d3-5c3d-4c68-b1ba-7eb43b6d3abd
   - BaseNodeGuid: c0e1c4d3-5c3d-4c68-b1ba-7eb43b6d3abd
     PortName: Next
+    TargetNodeGuid: c2bcf5d2-aefb-4c91-83cb-349bbaa228ef
+  - BaseNodeGuid: c2bcf5d2-aefb-4c91-83cb-349bbaa228ef
+    PortName: Next
     TargetNodeGuid: 4a8ccabe-1781-4c77-98a3-976bad1054bd
   - BaseNodeGuid: 4a8ccabe-1781-4c77-98a3-976bad1054bd
     PortName: Next
-    TargetNodeGuid: c2bcf5d2-aefb-4c91-83cb-349bbaa228ef
+    TargetNodeGuid: e3578d2d-fd03-4f4a-9602-6fcd6fe61ba0
   FormNodeDatas:
+  - Guid: e3578d2d-fd03-4f4a-9602-6fcd6fe61ba0
+    FormName: purple
+    Position: {x: 634, y: 98}
+    IsBranch: 0
   - Guid: c0e1c4d3-5c3d-4c68-b1ba-7eb43b6d3abd
     FormName: red
-    Position: {x: 132, y: 0}
-    IsBranch: 0
-  - Guid: 4a8ccabe-1781-4c77-98a3-976bad1054bd
-    FormName: blue
-    Position: {x: 385, y: 0}
+    Position: {x: 158, y: 11}
     IsBranch: 0
   - Guid: c2bcf5d2-aefb-4c91-83cb-349bbaa228ef
     FormName: green
-    Position: {x: 575, y: 0}
+    Position: {x: 353, y: 11}
+    IsBranch: 0
+  - Guid: 4a8ccabe-1781-4c77-98a3-976bad1054bd
+    FormName: blue
+    Position: {x: 486, y: 134}
     IsBranch: 0
