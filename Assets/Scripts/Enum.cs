@@ -1,8 +1,8 @@
-public enum FormPlans
+public enum Branches
 {
-    form1,
-    form2,
-    form3
+    branch1,
+    branch2,
+    branch3
 }
 
 public enum Forms

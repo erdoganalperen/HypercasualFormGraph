@@ -89,7 +89,7 @@ public class FormPlannerGraphView : GraphView
         inputPort.portName = "Input";
         formBranchNode.inputContainer.Add(inputPort);
         //
-        foreach (FormPlans form in Enum.GetValues(typeof(FormPlans)))
+        foreach (Branches form in Enum.GetValues(typeof(Branches)))
         {
             AddOutput(formBranchNode,form.ToString());
             //AddEnumOutput(formBranchNode,form);
@@ -145,7 +145,7 @@ public class FormPlannerGraphView : GraphView
     }
 
 
-    public void AddEnumOutput(Node node,FormPlans formPlan)
+    public void AddEnumOutput(Node node,Branches formPlan)
     {
         var generatedPort = GeneratePort(node, Direction.Output);
         generatedPort.styleSheets.Add(Resources.Load<StyleSheet>("Output"));

@@ -7,12 +7,12 @@ public class FormGraphParser
     private FormPlannerContainer _formPlanner;
     private string _currentNodeGuid;
     //enums
-    private FormPlans _currentFormPlan;
+    private Branches _currentFormBranch;
     //
     public FormGraphParser(FormPlannerContainer graph)
     {
         _formPlanner = graph;
-        _currentFormPlan = FormPlans.form1;
+        _currentFormBranch = Branches.branch1;
         _currentNodeGuid = _formPlanner.NodeLinks.First().BaseNodeGuid;
         ProceedToNextForm();
     }
@@ -26,7 +26,7 @@ public class FormGraphParser
         }
         if (nextNode.IsBranch)
         {
-            var link = _formPlanner.NodeLinks.FirstOrDefault(x => x.BaseNodeGuid == nextNode.Guid && x.PortName == _currentFormPlan.ToString());
+            var link = _formPlanner.NodeLinks.FirstOrDefault(x => x.BaseNodeGuid == nextNode.Guid && x.PortName == _currentFormBranch.ToString());
             if (link != null)
             {
                 Debug.Log($"Upgraded from => {GetNodeByGuid(_currentNodeGuid).FormName} to => {GetNodeByGuid(link.TargetNodeGuid).FormName}");
