@@ -3862,3 +3862,156 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 15862.950671 seconds.
+  path: Assets/FormGraph
+  artifactKey: Guid(1b41208e19aad4e55b6e8f5524982c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph using Guid(1b41208e19aad4e55b6e8f5524982c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d554bdea9b136db692550fac5f99c6') in 0.005228 seconds 
+  Import took 0.007237 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001813 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+2022-02-15 16:36:35.913 Unity[4274:99082] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x600000a9b330 Font Asset, ke='Command-F12'>, but is only supported for system-provided menu items; will not be used
+Mono: successfully reloaded assembly
+- Completed reload, in  1.925 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1926ms)
+		BeginReloadAssembly (186ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (34ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (1654ms)
+			LoadAssemblies (168ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (291ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (921ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (221ms)
+				ProcessInitializeOnLoadAttributes (660ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (28ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1623 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 211.7 MB.
+System memory in use after: 211.8 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2235.
+Total: 1.960750 ms (FindLiveObjects: 0.095584 ms CreateObjectMapping: 0.032250 ms MarkObjects: 1.819125 ms  DeleteObjects: 0.013167 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 81.590342 seconds.
+  path: Assets/FormGraph/Example/Scripts/GreenForm.cs
+  artifactKey: Guid(6f4603ffb0f32f64fb5d4d7e1633dc07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Example/Scripts/GreenForm.cs using Guid(6f4603ffb0f32f64fb5d4d7e1633dc07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a920566063cd40c0d51759ff0961a906') in 0.107123 seconds 
+  Import took 0.111173 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002998 seconds.
+  path: Assets/FormGraph/Editor/GraphSaveUtility.cs
+  artifactKey: Guid(d215a4b0210331b428178526fc0ea70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Editor/GraphSaveUtility.cs using Guid(d215a4b0210331b428178526fc0ea70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4fa5be8782b8ed5547222b0ead05d9f') in 0.001764 seconds 
+  Import took 0.003481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023302 seconds.
+  path: Assets/FormGraph/Example/Scriptables/Blue.asset
+  artifactKey: Guid(58512087c06474fa99b71608819d0e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Example/Scriptables/Blue.asset using Guid(58512087c06474fa99b71608819d0e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a3e5b8b54bcac46ed03aa78309ce4f') in 0.014886 seconds 
+  Import took 0.016781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004268 seconds.
+  path: Assets/FormGraph/Scripts/FormGraphParser.cs
+  artifactKey: Guid(fde8672c4ac2f034691e5913a068b812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Scripts/FormGraphParser.cs using Guid(fde8672c4ac2f034691e5913a068b812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '378914cb1846e2da9b07b82442f5fe3f') in 0.001721 seconds 
+  Import took 0.003317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015709 seconds.
+  path: Assets/FormGraph/Scripts/FormStateManager.cs
+  artifactKey: Guid(a54f36ee96169504e9906c8539d9e51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Scripts/FormStateManager.cs using Guid(a54f36ee96169504e9906c8539d9e51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f17d90391df78499c7a86c9013e03701') in 0.001917 seconds 
+  Import took 0.003717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005947 seconds.
+  path: Assets/FormGraph/Example/Scriptables/Green.asset
+  artifactKey: Guid(63ca6073a072b4784931bc4b9fde7ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Example/Scriptables/Green.asset using Guid(63ca6073a072b4784931bc4b9fde7ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f74aadb5ac5e8d8879227ae3e7b3a3') in 0.002322 seconds 
+  Import took 0.004106 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012247 seconds.
+  path: Assets/FormGraph/Example/Scripts/PurpleForm.cs
+  artifactKey: Guid(b3be31f65eea04608818270dbfdaaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Example/Scripts/PurpleForm.cs using Guid(b3be31f65eea04608818270dbfdaaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79c1a4f2861e58e425f2d0a81e480bd0') in 0.001818 seconds 
+  Import took 0.003658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004735 seconds.
+  path: Assets/FormGraph/Example/ExampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Example/ExampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '195a88473db1136508a6f4015ff87562') in 0.000906 seconds 
+  Import took 0.002408 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003328 seconds.
+  path: Assets/FormGraph/Scripts/AbstractFormBase.cs
+  artifactKey: Guid(6f950f3c45aadde4282e4b4d81e3a575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Scripts/AbstractFormBase.cs using Guid(6f950f3c45aadde4282e4b4d81e3a575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c2d7bd0c7736c5870674ba2f987b0b1') in 0.001633 seconds 
+  Import took 0.003299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009418 seconds.
+  path: Assets/FormGraph/Editor/FormPlannerGraphView.cs
+  artifactKey: Guid(8e0a5cc12a335e14c944d6933bb7ae46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Editor/FormPlannerGraphView.cs using Guid(8e0a5cc12a335e14c944d6933bb7ae46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5462d03d4e25f0f896f3bda8352661d3') in 0.001765 seconds 
+  Import took 0.003527 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003275 seconds.
+  path: Assets/FormGraph/Example/Scripts/BaseForm.cs
+  artifactKey: Guid(b66e5a9e821a643ceaf3b47a6440bda6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FormGraph/Example/Scripts/BaseForm.cs using Guid(b66e5a9e821a643ceaf3b47a6440bda6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e649649773f7ec5fabe045f2c0598492') in 0.001593 seconds 
+  Import took 0.003199 seconds .
+
