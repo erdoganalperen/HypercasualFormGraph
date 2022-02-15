@@ -25,9 +25,13 @@ public abstract class AbstractFormBase : ScriptableObject
     public virtual void OnUpdate(FormStateManager manager)
     {
         Debug.Log($"form {FormType} is updating");
-        manager.transform.Rotate(Vector3.up);
     }
 
+    public virtual void OnExit(FormStateManager manager)
+    {
+        Debug.Log($"Exited from {FormType}.");
+
+    }
     public virtual void OnTrigger(FormStateManager manager)
     {
         Debug.Log($"form {FormType} has triggered");

@@ -10,7 +10,7 @@ public class FormStateManager : MonoBehaviour
     //other
     private AbstractFormBase _currentState;
     [SerializeField] private Branches _currentBranch=Branches.branch1;
-    public List<BaseForm> _formStateList;
+    public List<AbstractFormBase> _formStateList;
     private void Awake()
     {
         //Application.targetFrameRate = 144;
@@ -42,7 +42,7 @@ public class FormStateManager : MonoBehaviour
         var tempNextFormState = _formGraphParser.GetNextForm();
         if (tempNextFormState == _currentState.FormType) return false;
 
-        BaseForm abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == tempNextFormState);
+        AbstractFormBase abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == tempNextFormState);
         if (abstractFormBase == null) return false;
 
         Forms nextFormState = _formGraphParser.ProceedToNextForm();
@@ -77,7 +77,8 @@ public class FormStateManager : MonoBehaviour
 
     private void SwitchState(AbstractFormBase state)
     {
+        if(_currentState != null) _currentState.OnExit(this);
         _currentState = state;
-        state.OnStart(this);
+        _currentState.OnStart(this);
     }
 }
