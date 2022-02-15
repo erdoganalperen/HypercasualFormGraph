@@ -9,30 +9,21 @@ public class FormStateManager : MonoBehaviour
     [SerializeField] private FormPlannerContainer graph;
     //other
     private AbstractFormBase _currentState;
-    private List<AbstractFormBase> _formStateList;
-    public List<GreenForm> _test;
+    [SerializeField] private Branches _currentBranch=Branches.branch1;
+    public List<BaseForm> _formStateList;
     private void Awake()
     {
         //Application.targetFrameRate = 144;
         _formGraphParser = new FormGraphParser(graph);
-        // creating instance of every state and add to list
-        _formStateList = new List<AbstractFormBase>()
-        {
-            new RedForm(Forms.red),
-            new GreenForm(Forms.green),
-            new BlueForm(Forms.blue),
-            new PurpleForm(Forms.purple)
-        };
-        foreach (var item in _test)
-        {
-            item.Init(item.FormType);
-        }
+        FormGraphParser.CurrentBranch = _currentBranch;
     }
-
+    private void OnValidate()
+    {
+        FormGraphParser.CurrentBranch = _currentBranch;
+    }
     private void Start()
     {
-        //SwitchState(_formStateList[0]);
-        SwitchState(_test[0]);
+        SwitchState(_formStateList[0]);
     }
 
     private void Update()
@@ -46,21 +37,31 @@ public class FormStateManager : MonoBehaviour
     }
 
     [NaughtyAttributes.Button("Next")]
-    public void NextForm()
+    public bool NextForm()
     {
-        Forms nextFormState = _formGraphParser.ProceedToNextForm();
-        if (nextFormState == _currentState.FormType) return;
+        var tempNextFormState = _formGraphParser.GetNextForm();
+        if (tempNextFormState == _currentState.FormType) return false;
 
-        SwitchState(_formStateList.FirstOrDefault(x=>x.FormType==nextFormState));
+        BaseForm abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == tempNextFormState);
+        if (abstractFormBase == null) return false;
+
+        Forms nextFormState = _formGraphParser.ProceedToNextForm();
+        SwitchState(abstractFormBase);
+        return true;
     }
+
     [NaughtyAttributes.Button("Previous")]
-    public void PreviousForm()
+    public bool PreviousForm()
     {
         Forms previousFormState = _formGraphParser.ProceedToPreviousForm();
-        if (previousFormState == _currentState.FormType) return;
+        if (previousFormState == _currentState.FormType) return false;
 
-        SwitchState(_formStateList.FirstOrDefault(x => x.FormType == previousFormState));
+        AbstractFormBase abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == previousFormState);
+        if (abstractFormBase == null) return false;
+        SwitchState(abstractFormBase);
+        return true;
     }
+
     public void CloseAllFormsExceptSpecified(Forms form)
     {
         foreach (Transform child in transform)
@@ -73,6 +74,7 @@ public class FormStateManager : MonoBehaviour
             child.gameObject.SetActive(false);
         }
     }
+
     private void SwitchState(AbstractFormBase state)
     {
         _currentState = state;

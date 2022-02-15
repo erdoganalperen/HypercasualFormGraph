@@ -35,7 +35,7 @@ public class GraphSaveUtility
             formContainer.NodeLinks.Add(new NodeLinkData
             {
                 BaseNodeGuid = outputNode.GUID,
-                PortName = connectedPorts[i].output.portName,
+                PortName = connectedPorts[i].output.portName, // <-
                 TargetNodeGuid = inputNode.GUID
             });
         }
@@ -81,8 +81,15 @@ public class GraphSaveUtility
             {
                 var targetNodeGuid = connections[j].TargetNodeGuid;
                 var targetNode = Nodes.First(x => x.GUID == targetNodeGuid);
-                LinkNodes(Nodes[i].outputContainer[j].Q<Port>(),(Port)targetNode.inputContainer[0]);
-                
+                // matching correct output with input
+                foreach (var item in Nodes[i].outputContainer.Children())
+                {
+                    if (item.Q<Port>().portName == connections[j].PortName)
+                    {
+                        LinkNodes(item.Q<Port>(), (Port)targetNode.inputContainer[0]);
+                    }
+                }
+
                 targetNode.SetPosition(new Rect(
                     _containerCache.FormNodeDatas.First(x=>x.Guid==targetNodeGuid).Position,
                     _targetGraphView.defaultNodeSize));
@@ -97,6 +104,7 @@ public class GraphSaveUtility
             output = output,
             input = input
         };
+
         tempEdge?.input.Connect(tempEdge);
         tempEdge?.output.Connect(tempEdge);
         

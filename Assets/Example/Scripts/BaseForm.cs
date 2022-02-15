@@ -3,12 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FormStateScriptableObject", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/BaseFormData", order = 1)]
 public class BaseForm : AbstractFormBase
 {
-    public int deneme;
     public BaseForm(Forms formType) : base(formType)
     {
+    }
+    public override void OnStart(FormStateManager manager)
+    {
+        base.OnStart(manager);
+        manager.CloseAllFormsExceptSpecified(base.FormType);
+    }
+    public override void OnUpdate(FormStateManager manager)
+    {
+        base.OnUpdate(manager);
     }
 }
