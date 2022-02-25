@@ -47,6 +47,7 @@ public class GraphSaveUtility
                 FormName = formNode.FormName,
                 Position = formNode.GetPosition().position,
                 IsBranch = formNode.BranchNode,
+                BaseForm = formNode.BaseForm
             });
         }
         //creating file for saved datas
@@ -117,9 +118,9 @@ public class GraphSaveUtility
         {
             FormNode tempNode;
             if (nodeData.IsBranch)
-                tempNode = _targetGraphView.CreateFormBranchNode(Vector2.zero);
+                tempNode = _targetGraphView.CreateBranchNode(Vector2.zero);
             else 
-                tempNode = _targetGraphView.CreateFormNode(nodeData.FormName,Vector2.zero);
+                tempNode = _targetGraphView.CreateFormNode(nodeData.FormName,Vector2.zero,nodeData.BaseForm);
             tempNode.GUID = nodeData.Guid;
             _targetGraphView.AddElement(tempNode);
 

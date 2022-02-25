@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurpleForm : AbstractFormBase
+public class PurpleForm : BaseFormClass
 {
     public PurpleForm(Forms formType) : base(formType) { }
 
@@ -11,4 +12,9 @@ public class PurpleForm : AbstractFormBase
         base.OnStart(manager);
         manager.CloseAllFormsExceptSpecified(FormType);
     }
+}
+
+[Serializable]
+public class Form{
+    public GameObject gameObject;
 }

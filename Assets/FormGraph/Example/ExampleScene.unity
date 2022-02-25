@@ -537,12 +537,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54f36ee96169504e9906c8539d9e51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graph: {fileID: 11400000, guid: 1956e7fc0a1a54e428863265d5a87a46, type: 2}
-  _currentBranch: 2
+  graph: {fileID: 11400000, guid: f7903d52c6b10d64ca170f1741867461, type: 2}
+  _currentBranch: 0
   _formStateList:
-  - {fileID: 11400000, guid: 9275ac7f6217f4f8897e2ff24ee530d7, type: 2}
-  - {fileID: 11400000, guid: 63ca6073a072b4784931bc4b9fde7ac7, type: 2}
-  - {fileID: 11400000, guid: 58512087c06474fa99b71608819d0e55, type: 2}
+  - {fileID: 11400000, guid: b500b2aa279b048698413231b42e25e9, type: 2}
+  - {fileID: 11400000, guid: 48a215562545a4fe28a66356980b5c8f, type: 2}
+  - {fileID: 11400000, guid: 605aa76856f27445dad5359ed1a4b054, type: 2}
+  baseForm: {fileID: 11400000, guid: d70f389e607e44b75932bbeaf9d8e541, type: 2}
+  baseFormClass: {fileID: 0}
 --- !u!1001 &1850115996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -597,6 +599,10 @@ PrefabInstance:
     - target: {fileID: 1863262386412960386, guid: 5b92c6062bbab4f03963c177db6e4f0b, type: 3}
       propertyPath: m_Name
       value: purple
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863262386412960386, guid: 5b92c6062bbab4f03963c177db6e4f0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b92c6062bbab4f03963c177db6e4f0b, type: 3}

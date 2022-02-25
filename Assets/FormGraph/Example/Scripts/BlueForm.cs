@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueForm : AbstractFormBase
+public class BlueForm : BaseForm
 {
     public BlueForm(Forms formType) : base(formType) { }
 

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bcc699f0ddddb4c90424aaa856d854, type: 3}
+  m_Name: scr
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 12a2cefb-56af-41c6-a5aa-11d9b3997fdd
+    PortName: Entry
+    TargetNodeGuid: 65b41546-3864-42f6-a255-ead6db96591e
+  - BaseNodeGuid: 65b41546-3864-42f6-a255-ead6db96591e
+    PortName: Next
+    TargetNodeGuid: 32b3fc80-514b-498f-b174-c897e7a95818
+  FormNodeDatas:
+  - Guid: 65b41546-3864-42f6-a255-ead6db96591e
+    FormName: form node
+    Position: {x: 159, y: 15}
+    IsBranch: 0
+    BaseForm: {fileID: 11400000, guid: 605aa76856f27445dad5359ed1a4b054, type: 2}
+  - Guid: 32b3fc80-514b-498f-b174-c897e7a95818
+    FormName: form node
+    Position: {x: 360, y: 96}
+    IsBranch: 0
+    BaseForm: {fileID: 11400000, guid: 48a215562545a4fe28a66356980b5c8f, type: 2}

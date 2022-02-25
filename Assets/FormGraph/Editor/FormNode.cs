@@ -6,4 +6,5 @@ public class FormNode : Node
     public string FormName;
     public bool EntryPoint = false;
     public bool BranchNode = false;
+    public BaseForm BaseForm = null;
 }

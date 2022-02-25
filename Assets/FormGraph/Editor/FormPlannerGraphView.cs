@@ -1,18 +1,16 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.XR;
 public class FormPlannerGraphView : GraphView
 {
     public readonly Vector2 defaultNodeSize = new Vector2(150, 200);
     private NodeSearchWindow _searchWindow;
+    private BaseForm _baseForm;
     public FormPlannerGraphView(EditorWindow window)
     {
         styleSheets.Add(Resources.Load<StyleSheet>("FormPlannerGraph"));
@@ -76,7 +74,7 @@ public class FormPlannerGraphView : GraphView
         return compatiblePorts;
     }
 
-    public FormNode CreateFormBranchNode(Vector2 position)
+    public FormNode CreateBranchNode(Vector2 position)
     {
         var formBranchNode = new FormNode()
         {
@@ -106,38 +104,53 @@ public class FormPlannerGraphView : GraphView
 
     public void AddBranchNode(Vector2 position)
     {
-        AddElement(CreateFormBranchNode(position));
+        AddElement(CreateBranchNode(position));
     }
-    public void CreateNode(string nodeName,Vector2 mousePosition)
+    public void AddNode(string nodeName,Vector2 mousePosition)
     {
         AddElement(CreateFormNode(nodeName,mousePosition));
     }
-    public FormNode CreateFormNode(string nodeName,Vector2 position)
+    public FormNode CreateFormNode(string nodeName,Vector2 position, UnityEngine.Object baseForm=null)
     {
         var formNode = new FormNode()
         {
-            title = nodeName,
+            title = baseForm ? baseForm.name : nodeName,
             FormName = nodeName,
-            GUID = Guid.NewGuid().ToString()
+            GUID = Guid.NewGuid().ToString(),
+            BaseForm = baseForm as BaseForm
         };
+        formNode.SetPosition(new Rect(position,
+            defaultNodeSize));
+        //INPUT CONTAINER
         var inputPort = GeneratePort(formNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";
         formNode.inputContainer.Add(inputPort);
-        //
+        //OUTPUT CONTAINER
         AddOutput(formNode);
-        //
-        formNode.SetPosition(new Rect(position,
-            defaultNodeSize));
-        //
-        var textField = new TextField(string.Empty);
-        textField.RegisterValueChangedCallback(evt =>
+        //MAIN CONTAINER
+
+        //create object field in main container
+        var objField = new ObjectField()
         {
-            formNode.FormName = evt.newValue;
-            formNode.title = evt.newValue;
-        });
-        textField.SetValueWithoutNotify(formNode.title);
-        formNode.mainContainer.Add(textField);
+            objectType = typeof(BaseForm),
+            allowSceneObjects = false,
+            value = _baseForm
+        };
+        objField.RegisterValueChangedCallback(v => { _baseForm = v.newValue as BaseForm; formNode.title = _baseForm.name; formNode.BaseForm = _baseForm; });
+        objField.SetValueWithoutNotify(baseForm);
+        formNode.mainContainer.Add(objField);
+
+        // create text field in main container
+        //var textField = new TextField(string.Empty);
+        //textField.RegisterValueChangedCallback(evt =>
+        //{
+        //    formNode.FormName = evt.newValue;
+        //    formNode.title = evt.newValue;
+        //});
+        //textField.SetValueWithoutNotify(formNode.title);
+        //formNode.mainContainer.Add(textField);
         //
+
         formNode.RefreshExpandedState();
         formNode.RefreshPorts();
         formNode.SetPosition(new Rect(position,defaultNodeSize));

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedForm : AbstractFormBase
+public class RedForm : BaseFormClass
 {
     public RedForm(Forms type):base(type) { }
 

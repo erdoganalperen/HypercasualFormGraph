@@ -8,9 +8,11 @@ public class FormStateManager : MonoBehaviour
     private FormGraphParser _formGraphParser;
     [SerializeField] private FormPlannerContainer graph;
     //other
-    private AbstractFormBase _currentState;
+    private AbstractFormBase<FormStateManager> _currentState;
     [SerializeField] private Branches _currentBranch=Branches.branch1;
-    public List<AbstractFormBase> _formStateList;
+    public List<AbstractFormBase<FormStateManager>> _formStateList;
+    public BaseForm baseForm;
+    public BaseFormClass baseFormClass;
     private void Awake()
     {
         //Application.targetFrameRate = 144;
@@ -33,7 +35,7 @@ public class FormStateManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _currentState.OnTrigger(this);
+        _currentState.OnTrigger(this,other);
     }
 
     [NaughtyAttributes.Button("Next")]
@@ -42,7 +44,7 @@ public class FormStateManager : MonoBehaviour
         var tempNextFormState = _formGraphParser.GetNextForm();
         if (tempNextFormState == _currentState.FormType) return false;
 
-        AbstractFormBase abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == tempNextFormState);
+        AbstractFormBase<FormStateManager> abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == tempNextFormState);
         if (abstractFormBase == null) return false;
 
         Forms nextFormState = _formGraphParser.ProceedToNextForm();
@@ -56,7 +58,7 @@ public class FormStateManager : MonoBehaviour
         Forms previousFormState = _formGraphParser.ProceedToPreviousForm();
         if (previousFormState == _currentState.FormType) return false;
 
-        AbstractFormBase abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == previousFormState);
+        AbstractFormBase<FormStateManager> abstractFormBase = _formStateList.FirstOrDefault(x => x.FormType == previousFormState);
         if (abstractFormBase == null) return false;
         SwitchState(abstractFormBase);
         return true;
@@ -75,7 +77,7 @@ public class FormStateManager : MonoBehaviour
         }
     }
 
-    private void SwitchState(AbstractFormBase state)
+    private void SwitchState(AbstractFormBase<FormStateManager> state)
     {
         if(_currentState != null) _currentState.OnExit(this);
         _currentState = state;

@@ -45,7 +45,7 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
         switch (SearchTreeEntry.userData)
         {
             case FormNode formNode:
-                _graphView.CreateNode("form node",localMousePosition);
+                _graphView.AddNode("form node",localMousePosition);
                 return true;
             case FormBranchNode formBranchNode:
                 _graphView.AddBranchNode(localMousePosition);
